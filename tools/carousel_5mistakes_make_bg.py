@@ -188,7 +188,7 @@ slides = []
 
 # 1 — cover
 if MODE == 'photo':
-    img = cover(GEN + 'img2.png', W, H, 0.4)
+    img = cover(GEN + 'img8_cover.png', W, H, 0.5)
     ov = Image.new('L', (1, H))
     for y in range(H): ov.putpixel((0, y), int(255 * 0.96 * min(1, max(0, (y - 520) / 360)) ** 1.3))
     img.paste(Image.new('RGB', (W, H), PLUM_D), (0, 0), ov.resize((W, H)))
