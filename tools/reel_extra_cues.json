@@ -1,0 +1,7 @@
+{"duration": 13.0, "music": true, "cues": [
+ [0.0, "whoosh_up", 0.8], [0.4, "impact", 1.0], [0.75, "pop", 0.5], [1.2, "riser", 0.5], [1.55, "impact", 0.8], [1.6, "shimmer", 0.7],
+ [2.15, "whoosh_up", 1.0], [2.55, "impact", 0.8], [2.7, "ding", 0.6],
+ [4.55, "whoosh_up", 1.0], [4.95, "impact", 0.8], [5.1, "ding", 0.6],
+ [6.95, "whoosh_up", 1.0], [7.35, "impact", 0.8], [7.5, "ding", 0.6],
+ [9.35, "whoosh_down", 0.9], [9.45, "impact", 1.0], [9.6, "shimmer", 0.9], [10.35, "pop", 0.8], [10.7, "ding", 0.6]
+]}
