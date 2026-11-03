@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-SemiBold.ttf);font-weight:600}
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-Medium.ttf);font-weight:500}
+:root{--plum:#4E1E5C;--plumd:#280C34;--gold:#D2AF6E;--ivory:#FAF4E4;--blush:#ECCDD2}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:AX;color:var(--ivory);
+  background:radial-gradient(120% 80% at 50% 35%,#5c2670 0%,var(--plum) 40%,var(--plumd) 100%)}
+#cam{position:absolute;inset:0}
+.layer{position:absolute;inset:0}
+.photo{position:absolute;inset:0;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transform-origin:50% 50%}
+.shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(40,12,52,.55) 0%,rgba(40,12,52,0) 22%,rgba(40,12,52,0) 52%,rgba(40,12,52,.92) 82%,rgba(40,12,52,.97) 100%)}
+.w{display:inline-block;will-change:transform,filter,opacity}
+.line{position:absolute;left:60px;right:60px;text-align:center;white-space:nowrap}
+.xb{font-weight:800}.sb{font-weight:600}.md{font-weight:500}
+.gold{color:var(--gold)}.blush{color:var(--blush)}
+.badge{position:absolute;top:150px;right:90px;width:150px;height:150px;border-radius:50%;background:var(--gold);color:var(--plumd);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:90px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.count{direction:ltr;position:absolute;top:185px;left:90px;font-weight:600;font-size:40px;color:var(--ivory);opacity:.9;letter-spacing:2px}
+.tag{position:absolute;bottom:42px;right:60px;font-weight:500;font-size:26px;opacity:.75}
+#flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#fff3da 0%,#f3d9a8 60%,#d2af6e 100%);opacity:0;mix-blend-mode:screen;pointer-events:none}
+.streak{position:absolute;top:-400px;left:0;width:260px;height:2800px;background:linear-gradient(90deg,rgba(255,226,170,0) 0%,rgba(255,226,170,.55) 50%,rgba(255,226,170,0) 100%);
+  transform:rotate(18deg) translateX(-1500px);mix-blend-mode:screen;filter:blur(8px)}
+#prog{position:absolute;top:0;right:0;height:10px;width:100%;background:var(--gold);transform-origin:100% 50%;transform:scaleX(0);z-index:50}
+#progbg{position:absolute;top:0;left:0;height:10px;width:100%;background:rgba(255,255,255,.15);z-index:49}
+.card{position:absolute;width:300px;height:533px;border-radius:30px;overflow:hidden;border:5px solid var(--gold);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.card img{width:100%;height:100%;object-fit:cover}
+.plate{position:absolute;left:50%;top:420px;transform:translateX(-50%);background:#F7F1DB;border-radius:30px;padding:30px 36px}
+.plate img{width:470px;display:block}
+.pill{position:absolute;left:50%;top:1150px;transform:translateX(-50%);background:var(--gold);color:var(--plumd);font-weight:600;font-size:56px;
+  padding:26px 70px;border-radius:80px;white-space:nowrap;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.glow{position:absolute;width:900px;height:900px;left:90px;top:300px;border-radius:50%;background:radial-gradient(circle,rgba(210,175,110,.35),rgba(210,175,110,0) 65%)}
+</style></head><body>
+<div id="stage"><div id="cam">
+
+  <!-- HOOK -->
+  <div class="layer" id="hook">
+    <div class="glow" id="hglow"></div>
+    <div class="line xb gold" id="big3" style="top:330px;font-size:560px;line-height:1">3</div>
+    <div class="line xb" id="h1" style="top:1010px;font-size:96px"><span class="w">أشياء</span> <span class="w">ما</span> <span class="w">كنت</span> <span class="w">بتعرف</span></div>
+    <div class="line xb gold" id="h2" style="top:1145px;font-size:96px"><span class="w">إنه</span> <span class="w">ريتال</span> <span class="w">بتطبعها</span></div>
+  </div>
+
+  <!-- SCENES -->
+  <div class="layer scene" id="s1" style="visibility:hidden">
+    <div class="photo"><img src="/home/claude/retal/reel_extra/e1.jpg"></div><div class="shade"></div><div class="streak"></div>
+    <div class="count">1 / 3</div><div class="badge">1</div>
+    <div class="line xb t" style="top:1440px;font-size:130px"><span class="w">كروت</span> <span class="w">بيزنس</span></div>
+    <div class="line md blush s" style="top:1625px;font-size:52px"><span class="w">أول</span> <span class="w">انطباع</span> <span class="w">بإيد</span> <span class="w">زبونك</span></div>
+    <div class="tag">تصور إبداعي للتغليف</div>
+  </div>
+  <div class="layer scene" id="s2" style="visibility:hidden">
+    <div class="photo"><img src="/home/claude/retal/reel_extra/e2.jpg"></div><div class="shade"></div><div class="streak"></div>
+    <div class="count">2 / 3</div><div class="badge">2</div>
+    <div class="line xb t" style="top:1440px;font-size:130px"><span class="w">علب</span> <span class="w">صغيرة</span></div>
+    <div class="line md blush s" style="top:1625px;font-size:52px"><span class="w">للمجوهرات</span> <span class="w">والهدايا</span> <span class="w">والحلويات</span></div>
+    <div class="tag">تصور إبداعي للتغليف</div>
+  </div>
+  <div class="layer scene" id="s3" style="visibility:hidden">
+    <div class="photo"><img src="/home/claude/retal/reel_extra/e3.jpg"></div><div class="shade"></div><div class="streak"></div>
+    <div class="count">3 / 3</div><div class="badge">3</div>
+    <div class="line xb t" style="top:1440px;font-size:130px"><span class="w">مغلفات</span></div>
+    <div class="line md blush s" style="top:1625px;font-size:52px"><span class="w">للدعوات</span> <span class="w">والكروت</span> <span class="w">بشكل</span> <span class="w">راقي</span></div>
+    <div class="tag">تصور إبداعي للتغليف</div>
+  </div>
+
+  <!-- RECAP -->
+  <div class="layer" id="recap" style="visibility:hidden">
+    <div class="card" id="c1" style="left:690px;top:560px"><img src="/home/claude/retal/reel_extra/e1.jpg"></div>
+    <div class="card" id="c2" style="left:390px;top:520px"><img src="/home/claude/retal/reel_extra/e2.jpg"></div>
+    <div class="card" id="c3" style="left:90px;top:560px"><img src="/home/claude/retal/reel_extra/e3.jpg"></div>
+    <div class="line xb" id="r1" style="top:250px;font-size:104px"><span class="w">كلّه</span> <span class="w">بهوية</span> <span class="w">محلك</span></div>
+    <div class="line md blush" id="r2" style="top:1240px;font-size:54px"><span class="w">نفس</span> <span class="w">الشعار</span> <span class="w">·</span> <span class="w">نفس</span> <span class="w">الألوان</span></div>
+  </div>
+
+  <!-- END -->
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="/home/claude/retal/logo.png"></div>
+    <div class="line xb" id="e1" style="top:760px;font-size:100px"><span class="w">بدك</span> <span class="w">محلك</span> <span class="w">يبيّن</span></div>
+    <div class="line xb gold" id="e2" style="top:890px;font-size:100px"><span class="w">بكل</span> <span class="w">تفصيلة؟</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1330px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="/home/claude/retal/motion/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const D = 13.5;
+const tl = gsap.timeline({paused:true});
+const IN = {opacity:0, y:90, scale:1.5, filter:'blur(20px)'};
+function words(sel, t, st=0.11, dur=0.38){ tl.from(sel+' .w', {...IN, duration:dur, ease:'back.out(2.2)', stagger:st}, t); }
+function subw(sel, t){ tl.from(sel+' .w', {opacity:0, y:40, filter:'blur(12px)', duration:0.32, ease:'power3.out', stagger:0.07}, t); }
+function shake(t, k=1){ tl.to('#cam', {keyframes:[{x:-16*k,y:10*k},{x:14*k,y:-8*k},{x:-8*k,y:5*k},{x:4*k,y:-2*k},{x:0,y:0}], duration:0.28, ease:'none'}, t); }
+function flash(t, a=0.85){ tl.fromTo('#flash',{opacity:0},{opacity:a,duration:0.07,ease:'none'},t).to('#flash',{opacity:0,duration:0.35,ease:'power2.out'},t+0.07); }
+function show(sel,t){ tl.set(sel,{visibility:'visible'},t); }
+function hide(sel,t){ tl.set(sel,{visibility:'hidden'},t); }
+function sceneBody(id, t, len){
+  const s='#'+id;
+  tl.fromTo(s+' .photo img',{scale:1.32},{scale:1.0,duration:len,ease:'power1.out'},t);
+  tl.from(s+' .badge',{scale:0,rotation:-120,duration:0.5,ease:'back.out(3)'},t+0.25);
+  tl.from(s+' .count',{opacity:0,x:-40,duration:0.3},t+0.3);
+  words(s+' .t', t+0.35, 0.14, 0.42);
+  subw(s+' .s', t+0.8);
+  tl.fromTo(s+' .streak',{x:-1500},{x:1500,duration:0.7,ease:'power2.inOut'},t+1.1);
+  tl.from(s+' .tag',{opacity:0,duration:0.3},t+0.5);
+}
+// progress bar (retention)
+tl.to('#prog',{scaleX:1,duration:D,ease:'none'},0);
+
+// ---------- HOOK 0 - 2.0
+tl.from('#big3',{scale:3.2,opacity:0,filter:'blur(40px)',duration:0.38,ease:'expo.out'},0.02);
+shake(0.38,1.3); flash(0.36,0.5);
+tl.fromTo('#hglow',{scale:0.6,opacity:0},{scale:1.1,opacity:1,duration:0.8,ease:'power2.out'},0.3);
+tl.to('#big3',{scale:1.06,duration:1.5,ease:'sine.inOut'},0.45);
+words('#h1',0.55,0.12);
+words('#h2',1.12,0.13);
+// whip out to scene 1
+tl.to('#hook',{x:-1150,filter:'blur(30px)',duration:0.3,ease:'power3.in'},1.95);
+show('#s1',2.05);
+tl.from('#s1',{x:1150,filter:'blur(30px)',duration:0.38,ease:'power3.out'},2.05);
+flash(2.1,0.6); hide('#hook',2.3);
+sceneBody('s1',2.1,2.4);
+
+// ---------- S1 -> S2 : zoom punch + circle reveal  (4.5)
+tl.to('#s1 .photo img',{scale:1.9,filter:'blur(26px)',duration:0.32,ease:'power2.in'},4.45);
+tl.to('#s1',{opacity:0,duration:0.2},4.6);
+show('#s2',4.55);
+tl.fromTo('#s2',{clipPath:'circle(0% at 50% 45%)'},{clipPath:'circle(150% at 50% 45%)',duration:0.5,ease:'power3.out'},4.55);
+flash(4.62,0.7); shake(4.66,1); hide('#s1',4.9);
+sceneBody('s2',4.6,2.4);
+
+// ---------- S2 -> S3 : vertical whip (7.0)
+tl.to('#s2',{y:-1920,filter:'blur(34px)',duration:0.32,ease:'power3.in'},6.95);
+show('#s3',7.08);
+tl.from('#s3',{y:1920,filter:'blur(34px)',duration:0.4,ease:'power3.out'},7.08);
+flash(7.15,0.6); hide('#s2',7.3);
+sceneBody('s3',7.15,2.4);
+
+// ---------- RECAP (9.4)
+tl.to('#s3',{scale:0.82,opacity:0,filter:'blur(16px)',duration:0.35,ease:'power2.in'},9.35);
+show('#recap',9.45); hide('#s3',9.75);
+tl.from('#c1',{y:1400,rotation:30,duration:0.55,ease:'back.out(1.4)'},9.5).to('#c1',{rotation:7,duration:0.3},9.95);
+tl.from('#c2',{y:1400,rotation:-10,duration:0.55,ease:'back.out(1.4)'},9.62);
+tl.from('#c3',{y:1400,rotation:-30,duration:0.55,ease:'back.out(1.4)'},9.74).to('#c3',{rotation:-7,duration:0.3},10.2);
+shake(10.0,0.6);
+words('#r1',9.9,0.13);
+subw('#r2',10.4);
+
+// ---------- END (11.2)
+tl.to(['#c1','#c2','#c3'],{y:-1600,rotation:'+=15',duration:0.4,ease:'power3.in',stagger:0.05},11.1);
+tl.to(['#r1','#r2'],{opacity:0,y:-60,filter:'blur(14px)',duration:0.3},11.1);
+show('#end',11.3); hide('#recap',11.6);
+tl.from('#plate',{scale:0.4,opacity:0,filter:'blur(20px)',duration:0.45,ease:'back.out(2)'},11.35);
+flash(11.38,0.45);
+words('#e1',11.6,0.12); words('#e2',11.95,0.13);
+tl.from('#pill',{scale:0,opacity:0,duration:0.45,ease:'back.out(3)'},12.3);
+tl.to('#pill',{scale:1.07,duration:0.3,yoyo:true,repeat:1,ease:'sine.inOut'},12.8);
+tl.from('#e3',{opacity:0,y:30,duration:0.35},12.6);
+
+window.seek = t => { tl.seek(t, false); };
+window.READY = true;
+</script></body></html>
