@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-SemiBold.ttf);font-weight:600}
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-Medium.ttf);font-weight:500}
+:root{--plum:#4E1E5C;--plumd:#280C34;--gold:#D2AF6E;--ivory:#FAF4E4;--blush:#ECCDD2}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:AX;color:var(--ivory);
+  background:radial-gradient(120% 80% at 50% 35%,#5c2670 0%,var(--plum) 40%,var(--plumd) 100%)}
+#cam{position:absolute;inset:0}
+.layer{position:absolute;inset:0}
+.photo{position:absolute;inset:0;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transform-origin:50% 50%}
+.shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(40,12,52,.55) 0%,rgba(40,12,52,0) 22%,rgba(40,12,52,0) 52%,rgba(40,12,52,.92) 82%,rgba(40,12,52,.97) 100%)}
+.w{display:inline-block;will-change:transform,filter,opacity}
+.line{position:absolute;left:60px;right:60px;text-align:center;white-space:nowrap}
+.xb{font-weight:800}.sb{font-weight:600}.md{font-weight:500}
+.gold{color:var(--gold)}.blush{color:var(--blush)}
+.badge{position:absolute;top:150px;right:90px;width:150px;height:150px;border-radius:50%;background:var(--gold);color:var(--plumd);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:90px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.count{direction:ltr;position:absolute;top:185px;left:90px;font-weight:600;font-size:40px;color:var(--ivory);opacity:.9;letter-spacing:2px}
+.tag{position:absolute;bottom:42px;right:60px;font-weight:500;font-size:26px;opacity:.75}
+#flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#fff3da 0%,#f3d9a8 60%,#d2af6e 100%);opacity:0;mix-blend-mode:screen;pointer-events:none}
+.streak{position:absolute;top:-400px;left:0;width:260px;height:2800px;background:linear-gradient(90deg,rgba(255,226,170,0) 0%,rgba(255,226,170,.55) 50%,rgba(255,226,170,0) 100%);
+  transform:rotate(18deg) translateX(-1500px);mix-blend-mode:screen;filter:blur(8px)}
+#prog{position:absolute;top:0;right:0;height:10px;width:100%;background:var(--gold);transform-origin:100% 50%;transform:scaleX(0);z-index:50}
+#progbg{position:absolute;top:0;left:0;height:10px;width:100%;background:rgba(255,255,255,.15);z-index:49}
+.card{position:absolute;width:300px;height:533px;border-radius:30px;overflow:hidden;border:5px solid var(--gold);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.card img{width:100%;height:100%;object-fit:cover}
+.plate{position:absolute;left:50%;top:420px;transform:translateX(-50%);background:#F7F1DB;border-radius:30px;padding:30px 36px}
+.plate img{width:470px;display:block}
+.pill{position:absolute;left:50%;top:1150px;transform:translateX(-50%);background:var(--gold);color:var(--plumd);font-weight:600;font-size:56px;
+  padding:26px 70px;border-radius:80px;white-space:nowrap;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.glow{position:absolute;width:900px;height:900px;left:90px;top:300px;border-radius:50%;background:radial-gradient(circle,rgba(210,175,110,.35),rgba(210,175,110,0) 65%)}
+#B .shade{background:linear-gradient(to bottom,rgba(40,12,52,.9) 0%,rgba(40,12,52,.55) 22%,rgba(40,12,52,0) 40%,rgba(40,12,52,0) 55%,rgba(40,12,52,.92) 80%,rgba(40,12,52,.97) 100%)}
+#B .photo img{object-position:62% 50%}
+</style></head><body>
+<div id="stage"><div id="cam">
+  <div class="layer" id="A"><div class="photo"><img src="/home/claude/retal/w46/bag.jpg"></div>
+    <div class="shade"></div></div>
+  <div class="layer" id="B" style="visibility:hidden"><div class="photo"><img src="/home/claude/retal/types/t5.jpg"></div>
+    <div class="shade"></div><div class="streak"></div><div class="tag">تصور إبداعي للتغليف</div></div>
+  <div class="line xb" id="q1" style="top:250px;font-size:130px"><span class="w">هاد</span> <span class="w">كيسك؟</span></div>
+  <div class="line md blush" id="q2" style="top:1480px;font-size:64px"><span class="w">ولا</span> <span class="w">حدا</span> <span class="w">رح</span> <span class="w">يتذكره..</span></div>
+  <div class="line xb gold" id="b1" style="top:250px;font-size:110px;visibility:hidden"><span class="w">نفس</span> <span class="w">الكيس</span></div>
+  <div class="line xb" id="b2" style="top:390px;font-size:110px;visibility:hidden"><span class="w">مع</span> <span class="w">ريتال</span></div>
+  <div class="line xb" id="k1" style="top:1440px;font-size:140px;visibility:hidden"><span class="w">بشعارك</span></div>
+  <div class="line xb gold" id="k2" style="top:1440px;font-size:140px;visibility:hidden"><span class="w">بألوانك</span></div>
+  <div class="line xb" id="k3" style="top:1460px;font-size:100px;visibility:hidden"><span class="w">إعلان</span> <span class="w">ماشي</span> <span class="w">بالشارع</span></div>
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="/home/claude/retal/logo.png"></div>
+    <div class="line xb" id="e1" style="top:760px;font-size:100px"><span class="w">خلّي</span> <span class="w">كيسك</span></div>
+    <div class="line xb gold" id="e2" style="top:890px;font-size:100px"><span class="w">يحكي</span> <span class="w">عن</span> <span class="w">محلك</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1330px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="/home/claude/retal/motion/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const D = 10.5;
+const tl = gsap.timeline({paused:true});
+const IN = {opacity:0, y:90, scale:1.5, filter:'blur(20px)'};
+function words(sel, t, st=0.11, dur=0.38){ tl.from(sel+' .w', {...IN, duration:dur, ease:'back.out(2.2)', stagger:st}, t); }
+function shake(t, k=1){ tl.to('#cam', {keyframes:[{x:-16*k,y:10*k},{x:14*k,y:-8*k},{x:-8*k,y:5*k},{x:4*k,y:-2*k},{x:0,y:0}], duration:0.28, ease:'none'}, t); }
+function flash(t, a=0.85){ tl.fromTo('#flash',{opacity:0},{opacity:a,duration:0.07,ease:'none'},t).to('#flash',{opacity:0,duration:0.35,ease:'power2.out'},t+0.07); }
+function show(s,t){ tl.set(s,{visibility:'visible'},t); } function hide(s,t){ tl.set(s,{visibility:'hidden'},t); }
+function out(s,t){ tl.to(s,{opacity:0,scale:0.8,filter:'blur(16px)',duration:0.2,ease:'power2.in'},t); }
+tl.to('#prog',{scaleX:1,duration:D,ease:'none'},0);
+// BEFORE
+tl.fromTo('#A .photo img',{scale:1.25},{scale:1.0,duration:3.2,ease:'power1.out'},0);
+tl.fromTo('#A .photo img',{filter:'saturate(0.3) brightness(0.9)'},{filter:'saturate(0.3) brightness(0.9)',duration:0.01},0);
+words('#q1',0.1,0.15,0.42); shake(0.45,1.2);
+tl.from('#q2 .w',{opacity:0,y:40,filter:'blur(12px)',duration:0.32,stagger:0.12},1.1);
+// TRANSFORM 2.7
+out(['#q1','#q2'],2.6);
+show('#B',2.75);
+tl.fromTo('#B',{clipPath:'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)'},{clipPath:'polygon(0% 0%, 130% 0%, 100% 100%, -30% 100%)',duration:0.55,ease:'power3.inOut'},2.75);
+flash(3.15,0.9); shake(3.2,1.4); hide('#A',3.4);
+tl.fromTo('#B .photo img',{scale:1.35},{scale:1.0,duration:4.2,ease:'power1.out'},2.75);
+tl.fromTo('#B .streak',{x:-1500},{x:1500,duration:0.8,ease:'power2.inOut'},3.3);
+show('#b1',3.4); show('#b2',3.4);
+words('#b1',3.45,0.14); words('#b2',3.8,0.14);
+// kinetic beats
+show('#k1',4.6); words('#k1',4.6,0.1,0.32); tl.to('#B .photo img',{scale:'+=0.06',duration:0.12,yoyo:true,repeat:1},4.62); shake(4.65,0.6);
+out('#k1',5.3);
+show('#k2',5.4); words('#k2',5.4,0.1,0.32); tl.to('#B .photo img',{scale:'+=0.06',duration:0.12,yoyo:true,repeat:1},5.42); shake(5.45,0.6);
+out('#k2',6.1);
+show('#k3',6.2); words('#k3',6.2,0.12,0.34); shake(6.3,0.6);
+// END 7.6
+out(['#b1','#b2','#k3'],7.4);
+tl.to('#B',{scale:0.85,opacity:0,filter:'blur(18px)',duration:0.35,ease:'power2.in'},7.45);
+show('#end',7.65); hide('#B',7.9);
+tl.from('#plate',{scale:0.4,opacity:0,filter:'blur(20px)',duration:0.45,ease:'back.out(2)'},7.7);
+flash(7.72,0.45);
+words('#e1',7.95,0.12); words('#e2',8.3,0.13);
+tl.from('#pill',{scale:0,opacity:0,duration:0.45,ease:'back.out(3)'},8.7);
+tl.to('#pill',{scale:1.07,duration:0.3,yoyo:true,repeat:1,ease:'sine.inOut'},9.25);
+tl.from('#e3',{opacity:0,y:30,duration:0.35},9.0);
+window.seek = t => { tl.seek(t, false); };
+window.READY = true;
+</script></body></html>
