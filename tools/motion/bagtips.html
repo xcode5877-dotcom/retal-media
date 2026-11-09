@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-SemiBold.ttf);font-weight:600}
+@font-face{font-family:AX;src:url(/home/claude/retal/fonts/Alexandria-Medium.ttf);font-weight:500}
+:root{--plum:#4E1E5C;--plumd:#280C34;--gold:#D2AF6E;--ivory:#FAF4E4;--blush:#ECCDD2}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:AX;color:var(--ivory);
+  background:radial-gradient(120% 80% at 50% 35%,#5c2670 0%,var(--plum) 40%,var(--plumd) 100%)}
+#cam{position:absolute;inset:0}
+.layer{position:absolute;inset:0}
+.photo{position:absolute;inset:0;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;transform-origin:50% 50%}
+.shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(40,12,52,.55) 0%,rgba(40,12,52,0) 22%,rgba(40,12,52,0) 52%,rgba(40,12,52,.92) 82%,rgba(40,12,52,.97) 100%)}
+.w{display:inline-block;will-change:transform,filter,opacity}
+.line{position:absolute;left:60px;right:60px;text-align:center;white-space:nowrap}
+.xb{font-weight:800}.sb{font-weight:600}.md{font-weight:500}
+.gold{color:var(--gold)}.blush{color:var(--blush)}
+.badge{position:absolute;top:150px;right:90px;width:150px;height:150px;border-radius:50%;background:var(--gold);color:var(--plumd);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:90px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.count{direction:ltr;position:absolute;top:185px;left:90px;font-weight:600;font-size:40px;color:var(--ivory);opacity:.9;letter-spacing:2px}
+.tag{position:absolute;bottom:42px;right:60px;font-weight:500;font-size:26px;opacity:.75}
+#flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#fff3da 0%,#f3d9a8 60%,#d2af6e 100%);opacity:0;mix-blend-mode:screen;pointer-events:none}
+.streak{position:absolute;top:-400px;left:0;width:260px;height:2800px;background:linear-gradient(90deg,rgba(255,226,170,0) 0%,rgba(255,226,170,.55) 50%,rgba(255,226,170,0) 100%);
+  transform:rotate(18deg) translateX(-1500px);mix-blend-mode:screen;filter:blur(8px)}
+#prog{position:absolute;top:0;right:0;height:10px;width:100%;background:var(--gold);transform-origin:100% 50%;transform:scaleX(0);z-index:50}
+#progbg{position:absolute;top:0;left:0;height:10px;width:100%;background:rgba(255,255,255,.15);z-index:49}
+.card{position:absolute;width:300px;height:533px;border-radius:30px;overflow:hidden;border:5px solid var(--gold);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.card img{width:100%;height:100%;object-fit:cover}
+.plate{position:absolute;left:50%;top:420px;transform:translateX(-50%);background:#F7F1DB;border-radius:30px;padding:30px 36px}
+.plate img{width:470px;display:block}
+.pill{position:absolute;left:50%;top:1150px;transform:translateX(-50%);background:var(--gold);color:var(--plumd);font-weight:600;font-size:56px;
+  padding:26px 70px;border-radius:80px;white-space:nowrap;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.glow{position:absolute;width:900px;height:900px;left:90px;top:300px;border-radius:50%;background:radial-gradient(circle,rgba(210,175,110,.35),rgba(210,175,110,0) 65%)}
+
+.card2{position:absolute;left:90px;right:90px;border-radius:40px;padding:50px 60px;text-align:center}
+.bad{top:620px;background:rgba(255,255,255,.07);border:3px solid rgba(236,205,210,.35)}
+.good{top:1080px;background:var(--gold);color:var(--plumd)}
+.icon{display:inline-flex;width:110px;height:110px;border-radius:50%;align-items:center;justify-content:center;font-size:70px;font-weight:800;margin-bottom:20px}
+.bad .icon{background:rgba(236,205,210,.18);color:var(--blush)}
+.good .icon{background:var(--plumd);color:var(--gold)}
+.big{font-size:84px;font-weight:800;line-height:1.25}
+.small{font-size:50px;font-weight:600;line-height:1.35}
+.num{position:absolute;top:300px;left:0;right:0;text-align:center;font-weight:800;font-size:64px;color:var(--gold)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(210,175,110,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(210,175,110,.06) 2px,transparent 2px);background-size:90px 90px}
+</style></head><body>
+<div id="stage"><div class="grid" id="grid"></div><div id="cam">
+  <div class="layer" id="hook">
+    <div class="glow" id="hglow"></div>
+    <div class="line xb gold" id="big3" style="top:430px;font-size:300px;line-height:1">3</div>
+    <div class="line xb" id="h0" style="top:800px;font-size:130px"><span class="w">غلطات</span></div>
+    <div class="line xb" id="h1" style="top:990px;font-size:80px"><span class="w">بتصميم</span> <span class="w">الكيس</span></div>
+    <div class="line xb gold" id="h2" style="top:1110px;font-size:80px"><span class="w">بتخلّيه</span> <span class="w">ينرمى</span> <span class="w">بسرعة</span></div>
+  </div>
+<div class="layer" id="m1" style="visibility:hidden">
+    <div class="num">غلط رقم 1</div>
+    <div class="card2 bad"><div class="icon">✕</div><div class="big"><span class="w">شعار صغير ومخفي</span></div></div>
+    <div class="card2 good"><div class="icon">✓</div><div class="small">الحل: شعارك بالنص<br>وواضح من بعيد</div></div>
+  </div><div class="layer" id="m2" style="visibility:hidden">
+    <div class="num">غلط رقم 2</div>
+    <div class="card2 bad"><div class="icon">✕</div><div class="big"><span class="w">ألوان كثير ومزحومة</span></div></div>
+    <div class="card2 good"><div class="icon">✓</div><div class="small">الحل: لونين أو ثلاثة<br>من ألوان براندك</div></div>
+  </div><div class="layer" id="m3" style="visibility:hidden">
+    <div class="num">غلط رقم 3</div>
+    <div class="card2 bad"><div class="icon">✕</div><div class="big"><span class="w">مقاس مش مناسب</span></div></div>
+    <div class="card2 good"><div class="icon">✓</div><div class="small">الحل: الكيس على قد المنتج<br>لا أكبر ولا أصغر</div></div>
+  </div>
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="/home/claude/retal/logo.png"></div>
+    <div class="line xb" id="e1" style="top:760px;font-size:100px"><span class="w">منصمملك</span> <span class="w">كيس</span></div>
+    <div class="line xb gold" id="e2" style="top:890px;font-size:100px"><span class="w">بلا</span> <span class="w">ولا</span> <span class="w">غلط</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1330px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="/home/claude/retal/motion/node_modules/gsap/dist/gsap.min.js"></script>
+<script>
+const D = 14.0;
+const tl = gsap.timeline({paused:true});
+const IN = {opacity:0, y:90, scale:1.5, filter:'blur(20px)'};
+function words(sel, t, st=0.11, dur=0.38){ tl.from(sel+' .w', {...IN, duration:dur, ease:'back.out(2.2)', stagger:st}, t); }
+function shake(t, k=1){ tl.to('#cam', {keyframes:[{x:-16*k,y:10*k},{x:14*k,y:-8*k},{x:-8*k,y:5*k},{x:4*k,y:-2*k},{x:0,y:0}], duration:0.28, ease:'none'}, t); }
+function flash(t, a=0.85){ tl.fromTo('#flash',{opacity:0},{opacity:a,duration:0.07,ease:'none'},t).to('#flash',{opacity:0,duration:0.35,ease:'power2.out'},t+0.07); }
+function show(s,t){ tl.set(s,{visibility:'visible'},t); } function hide(s,t){ tl.set(s,{visibility:'hidden'},t); }
+tl.to('#prog',{scaleX:1,duration:D,ease:'none'},0);
+tl.fromTo('#grid',{backgroundPosition:'0px 0px'},{backgroundPosition:'0px 540px',duration:D,ease:'none'},0);
+// hook
+tl.from('#big3',{scale:3.2,opacity:0,filter:'blur(40px)',duration:0.38,ease:'expo.out'},0.02); shake(0.38,1.3); flash(0.36,0.45);
+tl.fromTo('#hglow',{scale:0.6,opacity:0},{scale:1.1,opacity:1,duration:0.8},0.3);
+words('#h0',0.5,0.1,0.4); words('#h1',0.9,0.12); words('#h2',1.3,0.12);
+tl.to('#hook',{x:-1150,filter:'blur(30px)',duration:0.3,ease:'power3.in'},2.2); hide('#hook',2.5);
+// mistakes: each 3.0s starting 2.4
+function mist(i,t,enter){
+  const s='#m'+i; show(s,t);
+  if(enter==='x') tl.from(s,{x:1150,filter:'blur(30px)',duration:0.38,ease:'power3.out'},t);
+  if(enter==='y') tl.from(s,{y:1920,filter:'blur(30px)',duration:0.38,ease:'power3.out'},t);
+  if(enter==='z') tl.from(s,{scale:2.2,opacity:0,filter:'blur(30px)',duration:0.4,ease:'expo.out'},t);
+  flash(t+0.05,0.5);
+  tl.from(s+' .num',{opacity:0,y:-40,duration:0.3},t+0.2);
+  tl.from(s+' .bad',{scale:0.6,opacity:0,duration:0.4,ease:'back.out(2)'},t+0.3);
+  tl.from(s+' .bad .icon',{rotation:-180,scale:0,duration:0.45,ease:'back.out(3)'},t+0.45);
+  words(s+' .bad',t+0.55,0.1,0.4); shake(t+0.6,0.7);
+  tl.from(s+' .good',{y:300,opacity:0,duration:0.45,ease:'back.out(1.6)'},t+1.35);
+  tl.from(s+' .good .icon',{scale:0,duration:0.4,ease:'back.out(3)'},t+1.6);
+  tl.to(s+' .bad',{opacity:0.45,scale:0.96,duration:0.3},t+1.5);
+  tl.to(s,{opacity:0,filter:'blur(24px)',scale:0.9,duration:0.28,ease:'power2.in'},t+2.75); hide(s,t+3.05);
+}
+mist(1,2.4,'x'); mist(2,5.4,'z'); mist(3,8.4,'y');
+// end 11.5
+show('#end',11.45);
+tl.from('#plate',{scale:0.4,opacity:0,filter:'blur(20px)',duration:0.45,ease:'back.out(2)'},11.5); flash(11.52,0.45);
+words('#e1',11.75,0.12); words('#e2',12.1,0.13);
+tl.from('#pill',{scale:0,opacity:0,duration:0.45,ease:'back.out(3)'},12.5);
+tl.to('#pill',{scale:1.07,duration:0.3,yoyo:true,repeat:1,ease:'sine.inOut'},13.05);
+tl.from('#e3',{opacity:0,y:30,duration:0.35},12.8);
+window.seek = t => { tl.seek(t, false); };
+window.READY = true;
+</script></body></html>
