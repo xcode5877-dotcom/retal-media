@@ -1,0 +1,23 @@
+@font-face{font-family:AX;src:url(../../fonts/Alexandria-ExtraBold.ttf);font-weight:800}
+@font-face{font-family:AX;src:url(../../fonts/Alexandria-SemiBold.ttf);font-weight:600}
+@font-face{font-family:AX;src:url(../../fonts/Alexandria-Medium.ttf);font-weight:500}
+:root{--plum:#4E1E5C;--plumd:#280C34;--gold:#D2AF6E;--ivory:#FAF4E4;--blush:#ECCDD2}
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:AX;color:var(--ivory);
+  background:radial-gradient(120% 80% at 50% 35%,#5c2670 0%,var(--plum) 40%,var(--plumd) 100%)}
+#cam{position:absolute;inset:0}
+.layer{position:absolute;inset:0}
+.w{display:inline-block;will-change:transform,filter,opacity}
+.line{position:absolute;left:50px;right:50px;text-align:center;white-space:nowrap}
+.xb{font-weight:800}.sb{font-weight:600}.md{font-weight:500}
+.gold{color:var(--gold)}.blush{color:var(--blush)}.dark{color:var(--plumd)}
+#flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#fff3da 0%,#f3d9a8 60%,#d2af6e 100%);opacity:0;mix-blend-mode:screen;pointer-events:none}
+#prog{position:absolute;top:0;right:0;height:10px;width:100%;background:var(--gold);transform-origin:100% 50%;transform:scaleX(0);z-index:50}
+#progbg{position:absolute;top:0;left:0;height:10px;width:100%;background:rgba(255,255,255,.15);z-index:49}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(210,175,110,.06) 2px,transparent 2px),linear-gradient(90deg,rgba(210,175,110,.06) 2px,transparent 2px);background-size:90px 90px}
+.glow{position:absolute;width:900px;height:900px;left:90px;top:300px;border-radius:50%;background:radial-gradient(circle,rgba(210,175,110,.35),rgba(210,175,110,0) 65%)}
+.plate{position:absolute;left:50%;top:430px;transform:translateX(-50%);background:#F7F1DB;border-radius:30px;padding:30px 36px}
+.plate img{width:470px;display:block}
+.pill{position:absolute;left:50%;top:1170px;transform:translateX(-50%);background:var(--gold);color:var(--plumd);font-weight:600;font-size:56px;
+  padding:26px 70px;border-radius:80px;white-space:nowrap;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.tagline{position:absolute;bottom:60px;left:0;right:0;text-align:center;font-weight:500;font-size:30px;opacity:.7;letter-spacing:1px}

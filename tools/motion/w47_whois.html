@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link rel="stylesheet" href="w47_common.css">
+<style>
+.ico{position:absolute;left:50%;top:430px;width:560px;height:560px;margin-left:-280px}
+.ico svg{width:100%;height:100%}
+.q{position:absolute;left:0;right:0;top:540px;text-align:center;font-size:300px;font-weight:800;color:var(--blush)}
+.strike{position:absolute;left:170px;right:170px;top:1235px;height:14px;background:var(--blush);transform-origin:100% 50%;border-radius:8px}
+.prod{position:absolute;inset:0}
+.prod .ico{top:380px}
+.chk{position:absolute;left:50%;top:330px;margin-left:160px;width:130px;height:130px;border-radius:50%;background:var(--gold);color:var(--plumd);display:flex;align-items:center;justify-content:center;font-size:80px;font-weight:800;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.pname{position:absolute;left:0;right:0;top:1080px;text-align:center;font-size:130px;font-weight:800}
+.psub{position:absolute;left:0;right:0;top:1270px;text-align:center;font-size:70px;font-weight:600;color:var(--gold)}
+.dots{position:absolute;left:0;right:0;top:1460px;text-align:center;direction:ltr}
+.dots i{display:inline-block;width:22px;height:22px;border-radius:50%;margin:0 12px;background:rgba(250,244,228,.25)}
+.dots i.on{background:var(--gold)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="box" viewBox="0 0 200 200"><path d="M100 30 L170 62 L170 140 L100 172 L30 140 L30 62 Z" fill="currentColor" opacity=".18"/><path d="M100 30 L170 62 L100 94 L30 62 Z M100 94 L100 172 M30 62 L30 140 L100 172 L170 140 L170 62" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/></symbol>
+ <symbol id="bag" viewBox="0 0 200 200"><path d="M45 70 H155 L165 175 H35 Z" fill="currentColor" opacity=".18"/><path d="M45 70 H155 L165 175 H35 Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/><path d="M75 70 V55 a25 25 0 0 1 50 0 V70" fill="none" stroke="currentColor" stroke-width="7"/></symbol>
+ <symbol id="card" viewBox="0 0 200 200"><rect x="25" y="55" width="150" height="92" rx="10" fill="currentColor" opacity=".18"/><rect x="25" y="55" width="150" height="92" rx="10" fill="none" stroke="currentColor" stroke-width="7"/><path d="M120 85 H155 M100 105 H155 M110 123 H155" stroke="currentColor" stroke-width="7" stroke-linecap="round"/><rect x="42" y="78" width="38" height="38" rx="6" fill="currentColor"/></symbol>
+ <symbol id="mini" viewBox="0 0 200 200"><rect x="55" y="88" width="90" height="72" rx="6" fill="currentColor" opacity=".18"/><rect x="55" y="88" width="90" height="72" rx="6" fill="none" stroke="currentColor" stroke-width="7"/><rect x="48" y="70" width="104" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="7"/><path d="M100 70 V160" stroke="currentColor" stroke-width="7"/><path d="M100 70 C85 45 65 52 80 68 M100 70 C115 45 135 52 120 68" fill="none" stroke="currentColor" stroke-width="7"/></symbol>
+ <symbol id="env" viewBox="0 0 200 200"><rect x="25" y="55" width="150" height="100" rx="8" fill="currentColor" opacity=".18"/><rect x="25" y="55" width="150" height="100" rx="8" fill="none" stroke="currentColor" stroke-width="7"/><path d="M25 60 L100 112 L175 60" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<div id="stage"><div class="grid" id="grid"></div><div id="cam">
+  <div class="layer" id="hook">
+    <div class="glow" id="hglow"></div>
+    <div class="line xb" id="h0" style="top:560px;font-size:150px"><span class="w">طلبك</span> <span class="w">وصل…</span></div>
+    <div class="line xb blush" id="h1" style="top:800px;font-size:190px"><span class="w">بس</span></div>
+    <div class="line xb gold" id="h2" style="top:1070px;font-size:84px"><span class="w">مين</span> <span class="w">بيعرف</span> <span class="w">إنه</span> <span class="w">منك؟</span></div>
+  </div>
+  <div class="layer" id="plain" style="visibility:hidden">
+    <div class="ico" id="pbox" style="color:#b9a9bd"><svg><use href="#box"/></svg></div>
+    <div class="q" id="pq">؟</div>
+    <div class="line xb" id="p1" style="top:1100px;font-size:120px"><span class="w">بلا</span> <span class="w">شعار</span></div>
+    <div class="line xb blush" id="p2" style="top:1300px;font-size:120px"><span class="w">=</span> <span class="w">بلا</span> <span class="w">اسم</span></div>
+  </div>
+  <div class="layer prod" id="k1" style="visibility:hidden"><div class="ico gold"><svg><use href="#box"/></svg></div><div class="chk">✓</div><div class="pname">كرتونة</div><div class="psub">بشعارك</div><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="layer prod" id="k2" style="visibility:hidden"><div class="ico gold"><svg><use href="#bag"/></svg></div><div class="chk">✓</div><div class="pname">كيس</div><div class="psub">بشعارك</div><div class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div>
+  <div class="layer prod" id="k3" style="visibility:hidden"><div class="ico gold"><svg><use href="#card"/></svg></div><div class="chk">✓</div><div class="pname">كرت بيزنس</div><div class="psub">بشعارك</div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div>
+  <div class="layer prod" id="k4" style="visibility:hidden"><div class="ico gold"><svg><use href="#mini"/></svg></div><div class="chk">✓</div><div class="pname">علبة صغيرة</div><div class="psub">بشعارك</div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+  <div class="layer prod" id="k5" style="visibility:hidden"><div class="ico gold"><svg><use href="#env"/></svg></div><div class="chk">✓</div><div class="pname">مغلف</div><div class="psub">بشعارك</div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+  <div class="layer" id="say" style="visibility:hidden">
+    <div class="glow"></div>
+    <div class="line xb" id="s1" style="top:660px;font-size:120px"><span class="w">كل</span> <span class="w">قطعة</span> <span class="w">بتوصل</span></div>
+    <div class="line xb gold" id="s2" style="top:860px;font-size:150px"><span class="w">بتحكي</span> <span class="w">اسمك</span></div>
+  </div>
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="../../logo.png"></div>
+    <div class="line xb" id="e1" style="top:770px;font-size:96px"><span class="w">تغليف</span> <span class="w">كامل</span></div>
+    <div class="line xb gold" id="e2" style="top:900px;font-size:96px"><span class="w">بشعار</span> <span class="w">محلك</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1350px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="w47_common.js"></script>
+<script>
+const D = 14.0; base(D);
+// hook
+tl.fromTo('#hglow',{scale:0.6,opacity:0},{scale:1.1,opacity:1,duration:0.8},0);
+words('#h0',0.02,0.16,0.4);
+tl.from('#h1 .w',{scale:3.2,opacity:0,filter:'blur(40px)',duration:0.33,ease:'expo.out'},0.75); shake(1.05,1.4); flash(1.03,0.5);
+words('#h2',1.25,0.13,0.38);
+leave('#hook',2.55,'x');
+// plain box
+enter('#plain',2.8,'z'); flash(2.82,0.4);
+tl.from('#pbox',{y:-700,rotation:-25,duration:0.5,ease:'bounce.out'},2.85);
+tl.from('#pq',{scale:0,opacity:0,duration:0.4,ease:'back.out(3)'},3.35); shake(3.4,0.8);
+tl.to('#pq',{rotation:12,duration:0.2,yoyo:true,repeat:3,ease:'sine.inOut'},3.75);
+words('#p1',3.6,0.12);
+words('#p2',4.35,0.12); shake(4.5,0.7);
+leave('#plain',5.25,'z');
+// product montage 5.5 - 9.0 (0.7s each)
+const hw=['x','y','-x','z','x'];
+for(let i=1;i<=5;i++){
+  const t=5.5+(i-1)*0.7, s='#k'+i; enter(s,t,hw[i-1]); flash(t+0.02,0.35);
+  tl.from(s+' .ico',{scale:0.3,rotation:i%2?-20:20,duration:0.35,ease:'back.out(2)'},t);
+  tl.from(s+' .chk',{scale:0,duration:0.25,ease:'back.out(3)'},t+0.2);
+  tl.from(s+' .pname',{y:80,opacity:0,filter:'blur(16px)',duration:0.25,ease:'power3.out'},t+0.08);
+  tl.from(s+' .psub',{opacity:0,y:30,duration:0.2},t+0.22);
+  hide(s,t+0.7);
+}
+// statement 9.0
+enter('#say',9.0,'z'); flash(9.02,0.5);
+words('#s1',9.1,0.13); words('#s2',9.6,0.15,0.4); shake(9.9,1);
+leave('#say',10.75,'z');
+endCard(11.05);
+finish();
+</script></body></html>

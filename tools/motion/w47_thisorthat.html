@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link rel="stylesheet" href="w47_common.css">
+<style>
+.half{position:absolute;left:0;right:0;height:760px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.top{top:200px}.bot{top:1000px}
+.opt{width:860px;border-radius:44px;padding:56px 40px;text-align:center;box-sizing:border-box}
+.top .opt{background:rgba(250,244,228,.08);border:4px solid rgba(236,205,210,.45)}
+.bot .opt{background:var(--gold);color:var(--plumd)}
+.let{display:inline-flex;width:120px;height:120px;border-radius:50%;align-items:center;justify-content:center;font-size:72px;font-weight:800;margin-bottom:24px}
+.top .let{background:var(--blush);color:var(--plumd)}
+.bot .let{background:var(--plumd);color:var(--gold)}
+.otxt{font-size:96px;font-weight:800;line-height:1.2;white-space:nowrap}
+.vs{position:absolute;left:50%;top:910px;width:170px;height:170px;margin-left:-85px;border-radius:50%;background:var(--plumd);border:6px solid var(--gold);
+  color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:70px;font-weight:800;z-index:5;box-shadow:0 10px 50px rgba(0,0,0,.5)}
+.round{position:absolute;top:110px;left:0;right:0;text-align:center;font-size:48px;font-weight:600;color:var(--gold)}
+</style></head><body>
+<div id="stage"><div class="grid" id="grid"></div><div id="cam">
+  <div class="layer" id="hook">
+    <div class="glow" id="hglow"></div>
+    <div class="line xb" id="h0" style="top:470px;font-size:210px"><span class="w">هاد</span></div>
+    <div class="line xb gold" id="h1" style="top:720px;font-size:150px"><span class="w">ولا</span></div>
+    <div class="line xb" id="h2" style="top:920px;font-size:210px"><span class="w">هاد؟</span></div>
+    <div class="line sb blush" id="h3" style="top:1250px;font-size:64px"><span class="w">اختار</span> <span class="w">تغليف</span> <span class="w">محلك</span></div>
+    <div class="line md" id="h4" style="top:1360px;font-size:48px;opacity:.85"><span class="w">وجاوبنا</span> <span class="w">بالتعليقات</span></div>
+  </div>
+  <div class="layer r" id="r1" style="visibility:hidden"><div class="round">جولة 1 من 4</div>
+    <div class="half top"><div class="opt"><div class="let">أ</div><div class="otxt"><span class="w">كيس</span> <span class="w">ورق</span></div></div></div>
+    <div class="half bot"><div class="opt"><div class="let">ب</div><div class="otxt"><span class="w">علبة</span> <span class="w">كرتون</span></div></div></div>
+    <div class="vs">أو</div></div>
+  <div class="layer r" id="r2" style="visibility:hidden"><div class="round">جولة 2 من 4</div>
+    <div class="half top"><div class="opt"><div class="let">أ</div><div class="otxt"><span class="w">لون</span> <span class="w">غامق</span></div></div></div>
+    <div class="half bot"><div class="opt"><div class="let">ب</div><div class="otxt"><span class="w">لون</span> <span class="w">فاتح</span></div></div></div>
+    <div class="vs">أو</div></div>
+  <div class="layer r" id="r3" style="visibility:hidden"><div class="round">جولة 3 من 4</div>
+    <div class="half top"><div class="opt"><div class="let">أ</div><div class="otxt"><span class="w">شعار</span> <span class="w">كبير</span></div></div></div>
+    <div class="half bot"><div class="opt"><div class="let">ب</div><div class="otxt"><span class="w">شعار</span> <span class="w">صغير</span></div></div></div>
+    <div class="vs">أو</div></div>
+  <div class="layer r" id="r4" style="visibility:hidden"><div class="round">جولة 4 من 4</div>
+    <div class="half top"><div class="opt"><div class="let">أ</div><div class="otxt" style="font-size:80px"><span class="w">كرت</span> <span class="w">شكر</span> <span class="w">بالطلب</span></div></div></div>
+    <div class="half bot"><div class="opt"><div class="let">ب</div><div class="otxt"><span class="w">بلا</span> <span class="w">كرت</span></div></div></div>
+    <div class="vs">أو</div></div>
+  <div class="layer" id="ask" style="visibility:hidden">
+    <div class="line xb" id="a1" style="top:620px;font-size:110px"><span class="w">اكتبلنا</span> <span class="w">اختياراتك</span></div>
+    <div class="line md blush" id="a2" style="top:800px;font-size:60px"><span class="w">مثلاً:</span></div>
+    <div class="line xb gold" id="a3" style="top:900px;font-size:170px;direction:rtl"><span class="w">أ</span> <span class="w">ب</span> <span class="w">ب</span> <span class="w">أ</span></div>
+  </div>
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="../../logo.png"></div>
+    <div class="line xb" id="e1" style="top:770px;font-size:96px"><span class="w">أي</span> <span class="w">اختيار</span> <span class="w">بتختاره</span></div>
+    <div class="line xb gold" id="e2" style="top:900px;font-size:96px"><span class="w">منطبعه</span> <span class="w">بشعارك</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1350px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="w47_common.js"></script>
+<script>
+const D = 16.0; base(D);
+// hook 0-2.4
+tl.from('#h0 .w',{scale:3.2,opacity:0,filter:'blur(40px)',duration:0.35,ease:'expo.out'},0.02); shake(0.35,1.2); flash(0.33,0.45);
+tl.fromTo('#hglow',{scale:0.6,opacity:0},{scale:1.1,opacity:1,duration:0.8},0.3);
+tl.from('#h1 .w',{scale:0,rotation:-25,duration:0.35,ease:'back.out(3)'},0.6);
+tl.from('#h2 .w',{scale:3.2,opacity:0,filter:'blur(40px)',duration:0.35,ease:'expo.out'},0.95); shake(1.28,1.2); flash(1.26,0.45);
+words('#h3',1.45,0.1); words('#h4',1.8,0.1);
+leave('#hook',2.45,'x');
+// rounds 2.0s... each 2.4s from 2.75
+const hows=['x','z','y','-x'];
+[1,2,3,4].forEach((i,k)=>{
+  const t=2.75+k*2.4, s='#r'+i; enter(s,t,hows[k]); flash(t+0.04,0.5);
+  tl.from(s+' .round',{opacity:0,y:-40,duration:0.3},t+0.15);
+  tl.from(s+' .top .opt',{x:900,opacity:0,duration:0.4,ease:'back.out(1.6)'},t+0.2);
+  tl.from(s+' .bot .opt',{x:-900,opacity:0,duration:0.4,ease:'back.out(1.6)'},t+0.4);
+  words(s+' .top',t+0.3,0.1); words(s+' .bot',t+0.5,0.1);
+  tl.from(s+' .vs',{scale:0,rotation:-180,duration:0.45,ease:'back.out(3)'},t+0.75); shake(t+0.9,0.8);
+  tl.to(s+' .vs',{scale:1.15,duration:0.25,yoyo:true,repeat:3,ease:'sine.inOut'},t+1.2);
+  leave(s,t+2.15,k%2?'x':'z');
+});
+// ask 12.35
+enter('#ask',12.35,'z'); flash(12.37,0.5);
+words('#a1',12.45,0.12); words('#a2',12.85,0.1);
+tl.from('#a3 .w',{scale:0,opacity:0,duration:0.3,ease:'back.out(3)',stagger:0.14},13.0);
+leave('#ask',13.75,'z');
+endCard(14.1);
+finish();
+</script></body></html>
