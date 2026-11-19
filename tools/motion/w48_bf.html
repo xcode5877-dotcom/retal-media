@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link rel="stylesheet" href="w47_common.css"><link rel="stylesheet" href="w48_common_extra.css">
+</head><body>
+<div id="stage"><div class="grid" id="grid"></div><div id="cam">
+  <div class="layer" id="hook">
+    <div class="glow" id="hglow"></div>
+    <div class="line xb gold" id="h0" style="top:640px;font-size:150px"><span class="w">بلاك</span> <span class="w">فرايدي</span></div>
+    <div class="line xb" id="h1" style="top:840px;font-size:120px"><span class="w">هالجمعة</span></div>
+    <div class="line sb blush" id="h2" style="top:1100px;font-size:72px"><span class="w">طلباتك</span> <span class="w">رح</span> <span class="w">تكثر…</span></div>
+    <div class="line xb" id="h3" style="top:1220px;font-size:104px"><span class="w">تغليفك</span> <span class="w">جاهز؟</span></div>
+  </div>
+  <div class="layer sc" id="s1" style="visibility:hidden"><div class="ph"><img src="../../gen/w48/dana.jpg"><div class="fadet"></div><div class="fade"></div></div><div class="aitag">تصور إبداعي للتغليف</div>
+    <div class="line xb cap1"><span class="w">كل</span> <span class="w">علبة</span> <span class="w">بتنفتح</span></div>
+    <div class="line xb gold cap2"><span class="w">صورة</span> <span class="w">على</span> <span class="w">السوشال</span></div></div>
+  <div class="layer sc" id="s2" style="visibility:hidden"><div class="ph"><img src="../../gen/w48/nova.jpg"><div class="fadet"></div><div class="fade"></div></div><div class="aitag">تصور إبداعي للتغليف</div>
+    <div class="line xb cap1"><span class="w">كل</span> <span class="w">كيس</span> <span class="w">بيطلع</span></div>
+    <div class="line xb gold cap2"><span class="w">دعاية</span> <span class="w">بالشارع</span></div></div>
+  <div class="layer sc" id="s3" style="visibility:hidden"><div class="ph"><img src="../../gen/w48/mira.jpg"><div class="fadet"></div><div class="fade"></div></div><div class="aitag">تصور إبداعي للتغليف</div>
+    <div class="line xb cap1"><span class="w">وكل</span> <span class="w">زبون</span> <span class="w">جديد</span></div>
+    <div class="line xb gold cap2"><span class="w">بيتذكر</span> <span class="w">اسمك</span></div></div>
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="../../logo.png"></div>
+    <div class="line xb" id="e1" style="top:770px;font-size:100px"><span class="w">جهّز</span> <span class="w">تغليفك</span></div>
+    <div class="line xb gold" id="e2" style="top:900px;font-size:100px"><span class="w">قبل</span> <span class="w">الزحمة</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1350px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="w47_common.js"></script>
+<script>
+const D = 15.0; base(D);
+tl.fromTo('#hglow',{scale:0.6,opacity:0},{scale:1.1,opacity:1,duration:0.8},0);
+tl.from('#h0 .w',{scale:3,opacity:0,filter:'blur(40px)',duration:0.35,ease:'expo.out',stagger:0.18},0.05); shake(0.3,1.4); flash(0.28,0.55);
+tl.from('#h1 .w',{y:-300,opacity:0,duration:0.4,ease:'bounce.out'},0.6); shake(0.95,0.8);
+words('#h2',1.2,0.12); words('#h3',1.7,0.14); shake(1.95,0.7);
+tl.to('#h0',{color:'#FAF4E4',duration:0.1,yoyo:true,repeat:3},2.0);
+leave('#hook',2.55,'x');
+const hw=['x','z','y'];
+[1,2,3].forEach((i,k)=>{
+  const t=2.8+k*3.15, s='#s'+i; enter(s,t,hw[k]); flash(t+0.04,0.45);
+  tl.fromTo(s+' .ph img',{scale:1.18},{scale:1.0,duration:3.2,ease:'power1.out'},t);
+  tl.from(s+' .aitag',{opacity:0,duration:0.3},t+0.3);
+  words(s+' .cap1',t+0.4,0.11,0.38); words(s+' .cap2',t+0.95,0.12,0.4); shake(t+1.25,0.8);
+  leave(s,t+2.95,k===1?'x':'z');
+});
+endCard(12.3);
+finish();
+</script></body></html>

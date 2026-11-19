@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link rel="stylesheet" href="w47_common.css"><link rel="stylesheet" href="w48_common_extra.css">
+<style>
+.ph .b{clip-path:inset(0 0 0 100%)}
+.bar{position:absolute;top:150px;width:12px;height:1350px;left:1080px;background:var(--gold);box-shadow:0 0 40px 10px rgba(210,175,110,.7);z-index:7}
+.q{position:absolute;left:0;right:0;top:1450px;text-align:center}
+</style></head><body>
+<div id="stage"><div class="grid" id="grid"></div><div id="cam">
+  <div class="layer" id="hook">
+    <div class="glow" id="hglow"></div>
+    <div class="line sb blush" id="h0" style="top:600px;font-size:76px"><span class="w">نفس</span> <span class="w">المنتج</span> <span class="w">بالزبط…</span></div>
+    <div class="line xb" id="h1" style="top:740px;font-size:120px"><span class="w">حط</span> <span class="w">اسمك</span></div>
+    <div class="line xb gold" id="h2" style="top:900px;font-size:120px"><span class="w">وشوف</span> <span class="w">الفرق</span></div>
+  </div>
+  <div class="layer sc" id="s1" style="visibility:hidden"><div class="ph"><img class="a" src="../../gen/w48/nova_plain.jpg"><img class="b" src="../../gen/w48/nova.jpg"><div class="fadet"></div><div class="fade"></div></div>
+    <div class="bar"></div><div class="aitag">تصور إبداعي للتغليف</div>
+    <div class="lbl plain">بدون هوية</div><div class="lbl brand" style="visibility:hidden">بهوية محلك</div>
+    <div class="line xb cap1 t1"><span class="w">كيس</span> <span class="w">عادي…</span></div>
+    <div class="line xb gold cap1 t2" style="visibility:hidden"><span class="w">صار</span> <span class="w">يحكي</span> <span class="w">اسمك</span></div></div>
+  <div class="layer sc" id="s2" style="visibility:hidden"><div class="ph"><img class="a" src="../../gen/w48/mira_plain.jpg"><img class="b" src="../../gen/w48/mira.jpg"><div class="fadet"></div><div class="fade"></div></div>
+    <div class="bar"></div><div class="aitag">تصور إبداعي للتغليف</div>
+    <div class="lbl plain">بدون هوية</div><div class="lbl brand" style="visibility:hidden">بهوية محلك</div>
+    <div class="line xb cap1 t1"><span class="w">علبة</span> <span class="w">حلوة…</span></div>
+    <div class="line xb gold cap1 t2" style="visibility:hidden"><span class="w">صارت</span> <span class="w">علبتك</span> <span class="w">إنت</span></div></div>
+  <div class="layer" id="end" style="visibility:hidden">
+    <div class="glow" style="top:200px"></div>
+    <div class="plate" id="plate"><img src="../../logo.png"></div>
+    <div class="line xb" id="e1" style="top:770px;font-size:92px"><span class="w">تغليفك</span> <span class="w">أول</span> <span class="w">إشي</span></div>
+    <div class="line xb gold" id="e2" style="top:900px;font-size:92px"><span class="w">بيشوفه</span> <span class="w">الزبون</span></div>
+    <div class="pill" id="pill">راسلنا على واتساب</div>
+    <div class="line md blush" id="e3" style="top:1350px;font-size:50px">أقل طلب 500 قطعة</div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="progbg"></div><div id="prog"></div>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="w47_common.js"></script>
+<script>
+const D = 13.5; base(D);
+tl.fromTo('#hglow',{scale:0.6,opacity:0},{scale:1.1,opacity:1,duration:0.8},0);
+words('#h0',0.05,0.12);
+tl.from('#h1 .w',{scale:3,opacity:0,filter:'blur(40px)',duration:0.35,ease:'expo.out',stagger:0.15},0.55); shake(0.85,1.2); flash(0.83,0.45);
+tl.from('#h2 .w',{scale:3,opacity:0,filter:'blur(40px)',duration:0.35,ease:'expo.out',stagger:0.15},1.15); shake(1.45,1.2);
+leave('#hook',2.3,'x');
+[1,2].forEach((i,k)=>{
+  const t=2.5+k*4.0, s='#s'+i; enter(s,t,k?'z':'x'); flash(t+0.04,0.4);
+  tl.fromTo(s+' .ph img',{scale:1.08},{scale:1.0,duration:3.9,ease:'power1.out'},t);
+  words(s+' .t1',t+0.3,0.12);
+  // wipe right->left reveal
+  const w=t+1.4;
+  tl.to(s+' .ph .b',{clipPath:'inset(0 0 0 0%)',duration:0.7,ease:'power2.inOut'},w);
+  tl.fromTo(s+' .bar',{left:1080},{left:-20,duration:0.7,ease:'power2.inOut'},w);
+  tl.to(s+' .t1',{opacity:0,y:-40,duration:0.2},w); hide(s+' .lbl.plain',w+0.35); show(s+' .lbl.brand',w+0.35);
+  tl.from(s+' .lbl.brand',{scale:0,duration:0.4,ease:'back.out(3)'},w+0.35);
+  show(s+' .t2',w+0.5); words(s+' .t2',w+0.5,0.12); flash(w+0.7,0.55); shake(w+0.72,1.1);
+  leave(s,t+3.75,'z');
+});
+endCard(10.6);
+finish();
+</script></body></html>

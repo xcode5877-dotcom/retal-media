@@ -1,0 +1,8 @@
+.ph{position:absolute;left:0;top:150px;width:1080px;height:1350px;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph .fade{position:absolute;left:0;right:0;bottom:0;height:380px;background:linear-gradient(to bottom,rgba(40,12,52,0),#2e0f3b)}
+.ph .fadet{position:absolute;left:0;right:0;top:0;height:200px;background:linear-gradient(to top,rgba(40,12,52,0),#3a1547)}
+.aitag{position:absolute;top:185px;left:30px;font-weight:500;font-size:26px;color:#280C34;background:rgba(250,244,228,.88);padding:8px 20px;border-radius:30px;z-index:5}
+.lbl{position:absolute;left:50%;top:1290px;transform:translateX(-50%);font-weight:600;font-size:46px;padding:14px 44px;border-radius:60px;white-space:nowrap;z-index:6}
+.lbl.plain{background:rgba(40,12,52,.85);color:var(--ivory)} .lbl.brand{background:var(--gold);color:var(--plumd)}
+.cap1{top:1450px;font-size:92px} .cap2{top:1580px;font-size:92px}
